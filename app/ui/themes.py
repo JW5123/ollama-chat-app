@@ -6,12 +6,12 @@ LIGHT_THEME = {
     "input_border":         "#D0CEC8",
     "input_focus":          "#A0A0A0",
     "text_color":           "#1A1A1A",
-    # 氣泡
+
     "bubble_user_bg":       "#1A1A1A",
     "bubble_user_fg":       "#FFFFFF",
     "bubble_assistant_bg":  "#E8E8E4",
     "bubble_assistant_fg":  "#1A1A1A",
-    # 按鈕
+
     "btn_send_bg":          "#1A1A1A",
     "btn_send_fg":          "#FFFFFF",
     "btn_send_hover":       "#333333",
@@ -36,12 +36,12 @@ DARK_THEME = {
     "input_border":         "#3A3A3C",
     "input_focus":          "#636366",
     "text_color":           "#F0F0F0",
-    # 氣泡
+
     "bubble_user_bg":       "#2563EB",
     "bubble_user_fg":       "#FFFFFF",
     "bubble_assistant_bg":  "#3A3A3C",
     "bubble_assistant_fg":  "#F0F0F0",
-    # 按鈕
+
     "btn_send_bg":          "#F0F0F0",
     "btn_send_fg":          "#1C1C1E",
     "btn_send_hover":       "#CCCCCC",
@@ -60,12 +60,10 @@ DARK_THEME = {
 
 
 def get_theme(dark_mode: bool) -> dict:
-    """根據模式回傳對應主題，True 為暗色，False 為亮色"""
     return DARK_THEME if dark_mode else LIGHT_THEME
 
 
 def get_stylesheets(dark_mode: bool) -> dict:
-    """根據模式回傳各元件的 StyleSheet 字串"""
     t = get_theme(dark_mode)
 
     return {
