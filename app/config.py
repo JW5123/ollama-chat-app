@@ -1,6 +1,6 @@
 BASE_URL = "http://127.0.0.1:11434/v1"
 API_KEY = "ollama"
-MODEL = "codellama:latest"
+MODEL = "codellama"
 
 DEFAULT_SYSTEM_PROMPT = (
     "你是專業的中文助理，請全程使用繁體中文（台灣）回覆，"
