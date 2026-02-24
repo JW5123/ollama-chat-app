@@ -7,11 +7,16 @@ class ChatService:
             base_url=BASE_URL,
             api_key=API_KEY,
         )
-    
-    def chat(self, history):
-        response = self.client.chat.completions.create(
-            model=MODEL,
+
+    def chat_stream(self, history, model: str = None):
+        stream = self.client.chat.completions.create(
+            model=model or MODEL,
             messages=history,
-            temperature=0.7
+            temperature=0.7,
+            # max_tokens=512,
+            stream=True
         )
-        return response.choices[0].message.content
+
+        for chunk in stream:
+            if chunk.choices[0].delta.content:
+                yield chunk.choices[0].delta.content
