@@ -1,6 +1,6 @@
 BASE_URL = "http://127.0.0.1:11434/v1"
 API_KEY = "ollama"
-MODEL = "llama3.1:8b"
+MODEL = "llama3.1:latest"
 
 AVAILABLE_MODELS = [
     "llama3.1:8b",
